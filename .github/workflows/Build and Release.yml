@@ -26,7 +26,7 @@ jobs:
     runs-on: macos-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4.1.7
 
     - name: Set up variables
       id: setup
@@ -587,7 +587,7 @@ jobs:
         echo "</details>" >> changelog.txt
 
     - name: Create Draft Release
-      uses: softprops/action-gh-release@v2
+      uses: softprops/action-gh-release@v2.0.6
       with:
         tag_name: "v${{ env.CHANGEVERSION }}"
         name: "SpotC++ v${{ env.CHANGEVERSION }}"
@@ -693,7 +693,7 @@ jobs:
           mv AltStoreRepo_updated.json AltStoreRepo.json
     
     - name: Upload updated AltStore Repo.json as artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4.3.4
       with:
         name: UpdatedAltStoreRepo
         path: AltStoreRepo.json
